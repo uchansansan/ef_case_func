@@ -8,8 +8,16 @@ def draw_hexagon(tr, size):
     for _ in range(6):
         my_turtle.forward(size)
         my_turtle.right(60)
-    my_turtle.left(90)
-
+    my_turtle.penup()
+    my_turtle.forward(2*size)
+    my_turtle.pendown()
+    # my_turtle.left(90)
+    # my_turtle.penup()
+    # my_turtle.right(90)
+    # my_turtle.forward(size)
+    # my_turtle.right(60)
+    # my_turtle.forward(size)
+    # my_turtle.left(60)
 
 def get_num_hexagons():
     '''function, that ask and checks num of hexagons from user, then return that num'''
@@ -22,7 +30,7 @@ def get_num_hexagons():
 
 
 if __name__ == '__main__':
-    width, height = 300, 300
+    width, height = 500, 500
     turtle.screensize(canvwidth=width, canvheight=height)
 
     num = get_num_hexagons()
@@ -31,7 +39,8 @@ if __name__ == '__main__':
     tr.penup()
     tr.goto(-width, height)
     tr.pendown()
-    draw_hexagon(tr, (width // num) // 2)
 
+    for i in range(num):
+        draw_hexagon(tr, (width // num) // 2)
 
     turtle.mainloop()
