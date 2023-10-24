@@ -5,12 +5,17 @@ def draw_hexagon(tr, size):
     '''function, that draw a single hexagon by size'''
 
     my_turtle = tr
+    my_turtle.left(150)
     for _ in range(6):
         my_turtle.forward(size)
         my_turtle.right(60)
+
     my_turtle.penup()
-    my_turtle.forward(2*size)
+    my_turtle.right(150)
+    my_turtle.forward(3**(1/2)*size)
     my_turtle.pendown()
+    # my_turtle.forward(2*size)
+    # my_turtle.pendown()
     # my_turtle.left(90)
     # my_turtle.penup()
     # my_turtle.right(90)
@@ -30,7 +35,7 @@ def get_num_hexagons():
 
 
 if __name__ == '__main__':
-    width, height = 500, 500
+    width, height = 200, 200
     turtle.screensize(canvwidth=width, canvheight=height)
 
     num = get_num_hexagons()
