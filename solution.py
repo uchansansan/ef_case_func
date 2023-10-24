@@ -21,4 +21,6 @@ def get_num_hexagons():
 
 
 if __name__ == '__main__':
+    turtle.screensize(canvwidth=500, canvheight=500)
     draw_hexagon(10)
+    turtle.mainloop()
