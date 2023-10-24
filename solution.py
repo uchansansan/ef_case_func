@@ -1,19 +1,19 @@
 import turtle
 
 
-def draw_hexagon(tr, size):
+def draw_hexagon(tr, size, x, y):
     '''function, that draw a single hexagon by size'''
 
     my_turtle = tr
+    my_turtle.goto(x, y)
+    my_turtle.pendown()
+
     my_turtle.left(150)
     for _ in range(6):
         my_turtle.forward(size)
         my_turtle.right(60)
-
     my_turtle.penup()
-    my_turtle.right(150)
-    my_turtle.forward(3**(1/2)*size)
-    my_turtle.pendown()
+
     # my_turtle.forward(2*size)
     # my_turtle.pendown()
     # my_turtle.left(90)
@@ -38,14 +38,27 @@ if __name__ == '__main__':
     width, height = 200, 200
     turtle.screensize(canvwidth=width, canvheight=height)
 
-    num = get_num_hexagons()
-
+    # num = get_num_hexagons()
+    num = 5
     tr = turtle.Turtle()
+    tr.speed(100)
     tr.penup()
-    tr.goto(-width, height)
+    # tr.goto(-width, height)
     tr.pendown()
-
+    # x, y = -width, height
+    x, y = 0, 0
+    size = (width // num) // 2
     for i in range(num):
-        draw_hexagon(tr, (width // num) // 2)
+        for j in range(num):
+            draw_hexagon(tr, size, x, y)
+            tr.right(150)
+            x+= size*3**(1/2)
+        y -= 2*size - size/2
+        if i % 2 == 0:
+            x = size*3**(1/2)/2
+        else:
+            x = 0
+
+
 
     turtle.mainloop()
