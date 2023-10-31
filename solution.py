@@ -1,7 +1,7 @@
 """
 Case_3
 Group:
-Uchanov Igor
+Uchanov Igor        70%
 Fishchukova Sofia   45%
 Tsvykh Viktoria     50%
 """
@@ -38,15 +38,6 @@ def draw_hexagon(tr, size, x, y, color_1):
         my_turtle.right(60)
     my_turtle.penup()
     my_turtle.end_fill()
-    # my_turtle.forward(2*size)
-    # my_turtle.pendown()
-    # my_turtle.left(90)
-    # my_turtle.penup()
-    # my_turtle.right(90)
-    # my_turtle.forward(size)
-    # my_turtle.right(60)
-    # my_turtle.forward(size)
-    # my_turtle.left(60)
 
 
 def get_num_hexagons():
@@ -63,7 +54,6 @@ if __name__ == '__main__':
     width, height = 500, 500
     turtle.screensize(canvwidth=width, canvheight=height)
 
-    # num = get_num_hexagons()
     num = get_num_hexagons()
     print('Доступные цвета для заливки:\n'
           '1. Красный\n'
@@ -78,9 +68,8 @@ if __name__ == '__main__':
     tr = turtle.Turtle()
     tr.speed(100)
     tr.penup()
-    # tr.goto(-width, height)
     tr.pendown()
-    # x, y = -width, height
+    
     x, y = 0, 0
     size = (width // num) // 2
     for i in range(num):
