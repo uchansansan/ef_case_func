@@ -8,6 +8,7 @@ Tsvykh Viktoria     50%
 import turtle
 
 def get_color_choice():
+    '''function, that asks user two colors and return his choice'''
     dict_color = {'красный': '#ec2e51', 'зеленый': '#59ea41', 'синий': '#211cf2',
                   'голубой': '#14dcf3', 'жёлтый': '#fffc00', 'розовый': '#f01de4'}
 
